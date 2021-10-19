@@ -10,7 +10,8 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "checkJs": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "resolveJsonModule": true
   },
   "include": [
     "src/**/*"
