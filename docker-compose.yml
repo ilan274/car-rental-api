@@ -1,6 +1,19 @@
 version: "3.7"
 
 services:
+  database_api:
+    image: postgres
+    container_name: database_api
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=postgrespw
+      - POSTGRES_DB=car_db
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
 # service name will be "app"
   app:
 # to build the "Dockerfile" image file
@@ -11,3 +24,7 @@ services:
     volumes:
 # workdir specified in "Dockerfile"
       - .:/usr/app
+    network_mode: host
+volumes:
+  pgdata:
+    driver: local
