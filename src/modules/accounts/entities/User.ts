@@ -1,10 +1,4 @@
-import {
-  BeforeInsert,
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryColumn,
-} from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 
 @Entity('users')
@@ -32,10 +26,9 @@ class User {
 
   @CreateDateColumn()
   created_at: Date;
-
-  @BeforeInsert()
-  generate(): void {
-    this.id = uuidv4();
+  
+  constructor() {
+    if (!this.id) this.id = uuidv4();
   }
 }
 
