@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
-import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
-import { SpecificationsRepository } from '../modules/cars/repositories/SpecificationsRepository';
+import { ensureAuthenticated } from '@shared/http/middlewares/ensureAuthenticated';
+
 import { CreateSpecificationController } from '../modules/cars/useCases/createSpecification/CreateSpecificationController';
 import { ListSpecificationsController } from '../modules/cars/useCases/listSpecifications/ListSpecificationsController';
 
